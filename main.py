@@ -27,7 +27,7 @@ s.onkeypress(paddle_pc.up, "w")
 s.onkeypress(paddle_pc.down, "s")
 
 while game_on:
-    time.sleep(globals_var.SPEED)
+    time.sleep(ball.speed)
     s.update()
     ball.move()
     if ball.ycor() >= globals_var.BOARD_Y/ 2 or ball.ycor() <= - globals_var.BOARD_Y/ 2:
@@ -35,9 +35,11 @@ while game_on:
     if (ball.xcor() >= (globals_var.BOARD_X)/ 2 + 20):
         score.update_score_p1()
         ball.reset()
+        time.sleep(1)
     if ball.xcor() <= -(globals_var.BOARD_X)/ 2 -20:
         score.update_score_p2()
         ball.reset()
+        time.sleep(1)
     if (ball.xcor() >= (globals_var.BOARD_X)/ 2 - 20 and ball.distance(paddle_player) <= 50) or (ball.xcor() <= -(globals_var.BOARD_X)/ 2 + 20 and ball.distance(paddle_pc) <= 50):
         ball.change_direction_x()
         
