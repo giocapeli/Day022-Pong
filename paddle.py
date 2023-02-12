@@ -1,9 +1,5 @@
 from turtle import Turtle
-
-
-MOVE_DISTANCE = 20
-
-
+import globals_var
 class Paddle(Turtle):
     
 
@@ -17,8 +13,8 @@ class Paddle(Turtle):
         self.goto(self.init_position[0], self.init_position[1])
 
     def up(self):
-        self.goto(self.xcor(), self.ycor() + MOVE_DISTANCE)
+        self.goto(self.xcor(), self.ycor() + globals_var.MOVE_DISTANCE)
 
     def down(self):
-        self.goto(self.xcor(), self.ycor() - MOVE_DISTANCE)
+        self.goto(self.xcor(), self.ycor() - globals_var.MOVE_DISTANCE)
        
