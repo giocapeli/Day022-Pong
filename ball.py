@@ -22,6 +22,10 @@ class Ball(Turtle):
     def change_direction_x(self):
         # self.random_bounce()
         self.move_x *= -1
+    
+    def reset(self):
+        self.move_x *= -1
+        self.goto(0,0)
         
     # def random_bounce(self):
     #     self.move_x = randint(3, globals_var.MOVE_DISTANCE) * self.direction_x
