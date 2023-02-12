@@ -21,6 +21,8 @@ ball = Ball()
 s.listen()
 s.onkey(paddle_player.up, "Up")
 s.onkey(paddle_player.down, "Down")
+s.onkey(paddle_pc.up, "w")
+s.onkey(paddle_pc.down, "s")
 
 while game_on:
     time.sleep(globals_var.SPEED)
@@ -28,11 +30,7 @@ while game_on:
     ball.move()
     if ball.ycor() >= globals_var.BOARD_Y/ 2 or ball.ycor() <= - globals_var.BOARD_Y/ 2:
         ball.change_direction_y()
-    if ball.xcor() >= (globals_var.BOARD_X)/ 2 - 20:
-        # if ball.distance(paddle_player) <= 50:
-        ball.change_direction_x()
-    if ball.xcor() <= -(globals_var.BOARD_X)/ 2:
-        # if ball.distance(paddle_player) <= 50:
+    if (ball.xcor() >= (globals_var.BOARD_X)/ 2 - 20 and ball.distance(paddle_player) <= 50) or (ball.xcor() <= -(globals_var.BOARD_X)/ 2 + 20 and ball.distance(paddle_pc) <= 50):
         ball.change_direction_x()
         
 
